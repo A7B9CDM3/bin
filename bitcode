@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class shrdpink{
+    public static int set(int n , int i ){
+        int b = 1<<i;
+return (n|b);
+    }
+ public static int clr(int n , int i ){
+        int b = ~(1<<i);
+return (n&b);
+    }
+     public static int clrbit(int n , int i ){
+        int b = (~0)<<i;
+return (n&b);
+    }
+ public static int  update(int n , int i, int newb ){
+        
+if(newb == 0){
+    return clr(n, i);
+}else
+    set(n, i);
+return set(n, i);}
+
+ public static int  ijsetclr(int n , int i, int j ){
+int a = (~0)<<j+1;
+   int b = ((1)<<i)-1; 
+   int z = (a|b);
+return (z&n);}
+
+ public static void chechtopow(int n){
+    int b  = (n-1);
+    int q = (n&b);
+    if( q == 0){
+    System.out.println("this number pof power 2 = " + n );
+    }else
+    System.out.println("this number pof poof 2 not = " + n );
+    }
+
+ public static int  multiplypow(int n,int i){
+    int ans = 1;
+    int a = i;
+    while (n>0) {
+    if((n&1)!=0){
+
+        ans = ans*a;
+    }
+    a = a*a;
+n = n>>1;}
+return ans;
+
+ }
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+         int i = sc.nextInt();
+        // int j = sc.nextInt();
+        // int newb = sc.nextInt();
+System.out.println(multiplypow(n,i));}}
